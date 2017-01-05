@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color:#000;
+            font-size:12px;
+        }
+        .iphone{
+            width:340px;
+            height:540px;
+            background:#fff;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-270px 0 0 -170px;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/H5ComponentBase.css"/>
+    <link rel="stylesheet" href="../css/H5ComponentBar.css"/>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/H5ComponentBase.js"></script>
+    <script src="../js/H5ComponentBar.js"></script>
+</head>
+<body>
+    <!-- 用于开发 H5ComponentBar 对象（柱状图图文组件） -->
+    <div class="iphone">
+
+    </div>
+    <script>
+        var cfg = {
+            type : 'bar',
+            width : 500,
+            height : 500,
+            data:[
+                ['A项目',.4,'#ff7676'],
+                ['B项目',.35],
+                ['C项目',.3],
+                ['D项目',.3]
+
+            ],
+            css : {top:100,opacity:0},
+            animateIn:{opacity:1,top:200},
+            animateOut:{opacity:0,top:100},
+
+            center : true
+        }
+        var h5=new H5ComponentBar('myComponentBar',cfg);
+        $('.iphone').append(h5);
+
+        var leave = true;
+        $('body').click(function (){
+            leave = !leave;
+            $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad' )
+        });
+    </script>
+</body>
+</html>

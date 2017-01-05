@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color:#000;
+            font-size:12px;
+        }
+        .iphone{
+            width:340px;
+            height:540px;
+            background:#fff;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-270px 0 0 -170px;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/H5ComponentBase.css"/>
+    <link rel="stylesheet" href="../css/H5ComponentPoint.css"/>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/H5ComponentBase.js"></script>
+    <script src="../js/H5ComponentPoint.js"></script>
+</head>
+<body>
+    <!-- 用于开发 H5ComponentBase 对象（基本图文组件） -->
+    <div class="iphone">
+
+    </div>
+    <script>
+        var cfg = {
+            type : 'point',
+            width : 300,
+            height : 300,
+            data:[
+                ['A项目',.4,'green'],
+                ['B项目',.2,'yellow',0,'-80%'],
+                ['C项目',.2,'red',0,'85%']
+            ],
+            css : {bottom:'40%'},
+            center : true
+        }
+        var h5=new H5ComponentPoint('myName',cfg);
+        $('.iphone').append(h5);
+
+        var leave = true;
+        $('body').click(function (){
+            leave = !leave;
+            $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad' )
+        });
+        $('body').click();
+    </script>
+</body>
+</html>
