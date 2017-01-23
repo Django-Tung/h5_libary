@@ -76,7 +76,6 @@ var H5 =function ( ) {
                 break;
             default:
         }
-
         page.append(component);
         return this;
     }
@@ -98,5 +97,4 @@ var H5 =function ( ) {
     }
     this.loader = typeof H5_loading == 'function' ? H5_loading : this.loader;
     return this;
-
 }
